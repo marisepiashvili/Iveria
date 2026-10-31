@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ივერია — გაზეთის არქივი</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="desk-nav">
+    <a href="index.html" class="nav-brand">ივერია</a>
+    <span class="nav-links">
+      <a href="#/">არქივი</a>
+      <a href="#/new" class="admin-only">ახალი ნომერი</a>
+      <a href="#/help" class="admin-only">ინსტრუქცია</a>
+    </span>
+  </nav>
+
+  <main id="app"></main>
+
+  <footer class="desk-foot">„ივერია“ · 1877–1906 · ციფრული არქივი</footer>
+
+  <template id="help-template">
+    <div class="help-page">
+      <h1 class="archive-title">როგორ ავტვირთო ნომერი</h1>
+
+      <h2 class="list-head">1. ტექსტის მომზადება</h2>
+      <p>გახსენით <a href="#/new" class="admin-only">ახალი ნომერი</a>, შეავსეთ ნომერი და თარიღი, ჩაწერეთ ან ჩასვით ტექსტი
+        (ან ჩააგდეთ .txt ფაილი). „გადახედვა“ აჩვენებს, როგორ გამოჩნდება გაზეთში.
+        „მონახაზად შენახვა“ ინახავს სამუშაოს ამ ბრაუზერში — შეგიძლიათ მოგვიანებით გააგრძელოთ.</p>
+
+      <h2 class="list-head">2. ფაილის ჩამოტვირთვა</h2>
+      <p>დააჭირეთ „ჩამოტვირთვა .txt“. მიიღებთ ფაილს, მაგ. <code>1877-03-03_001.txt</code>.
+        ჩადეთ ის საიტის საქაღალდეში, შესაბამისი წლის ქვესაქაღალდეში: <code>issues/1877/</code>
+        (თუ ასეთი არ არსებობს, შექმენით).</p>
+
+      <h2 class="list-head">3. არქივის აწყობა</h2>
+      <p>ორჯერ დააწკაპუნეთ <code>build.command</code>-ზე (Mac) ან <code>build.bat</code>-ზე (Windows).
+        სკრიპტი თავიდან ააწყობს კატალოგს და ძიების ინდექსს და გეტყვით, თუ რომელიმე ფაილში შეცდომაა.
+        შემდეგ განაახლეთ გვერდი.</p>
+
+      <h2 class="list-head">4. საიტზე ატვირთვა</h2>
+      <p>ინტერნეტში ასატვირთად საკმარისია მთელი საქაღალდის ატვირთვა ნებისმიერ სტატიკურ ჰოსტინგზე
+        (მაგ. GitHub Pages, Netlify). სერვერი და მონაცემთა ბაზა საჭირო არ არის.</p>
+
+      <h2 class="list-head">ტექსტის ნიშნები</h2>
+      <table class="marks">
+        <tr><td><code>## სათაური</code></td><td>სტატიის სათაური</td></tr>
+        <tr><td><code># რუბრიკა</code></td><td>რუბრიკა, მაგ. „საქართველოს მატიანე“ — საძიებელში რომაული ციფრით</td></tr>
+        <tr><td><code>### ქვესათაური</code></td><td>მსხვილი ქვესათაური</td></tr>
+        <tr><td>ცარიელი სტრიქონი</td><td>ახალი აბზაცი</td></tr>
+        <tr><td><code>---</code></td><td>გამყოფი ხაზი</td></tr>
+        <tr><td><code>===</code></td><td>ახალი გვერდი</td></tr>
+        <tr><td><code>&gt;&gt; ი. ჭ.</code></td><td>ავტორის ხელმოწერა</td></tr>
+        <tr><td><code>**მსხვილი**</code> <code>*დახრილი*</code></td><td>შრიფტის სტილი</td></tr>
+      </table>
+
+      <h2 class="list-head">ფაილის ფორმატი</h2>
+      <p>ფაილის თავში — ველები, შემდეგ ცარიელი სტრიქონი და ტექსტი. სავალდებულოა მხოლოდ „ნომერი“ და „თარიღი“:</p>
+<pre>ნომერი: 1
+თარიღი: 1877-03-03
+თარიღი გაზეთზე: 3 მარტს 1877 წ.
+წელიწადი: წელიწადი პირველი
+წყარო: ეროვნული პარლამენტური ბიბლიოთეკა
+სკანი: https://…
+
+## წინასიტყვაობა
+
+ჟურნალ-გაზეთობაში შემოღებულია…</pre>
+      <p>თავსართის ტექსტები (ფასი, გამოსვლის დღეები) იცვლება ფაილში <code>config.js</code> — ცალკე ყოველი წლისთვის.</p>
+    </div>
+  </template>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

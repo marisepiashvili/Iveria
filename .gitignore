@@ -1,0 +1,7 @@
+.DS_Store
+.vscode/
+__pycache__/
+# Separate local tool, not part of the site
+pdf-to-text/
+# Font source files; the site uses the copy embedded in fonts.css
+assets/fonts/
