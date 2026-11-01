@@ -64,10 +64,10 @@ h2, .brand { -webkit-text-stroke: .5px currentColor; font-weight: 400; }
 .scene {
   display: block; width: 100%;
   height: min(calc(100svh - 56px), 900px); min-height: 620px;
-  object-fit: cover; object-position: 35% 62%;
+  object-fit: cover; object-position: 62% 40%;
 }
 .sheet {
-  position: absolute; right: max(24px, calc((100% - 1180px) / 2)); bottom: -8px;
+  position: absolute; left: max(24px, calc((100% - 1180px) / 2)); bottom: -8px;
   width: min(430px, 42%);
   transform: rotate(-1.2deg);
   /* the outline and shadow follow the clipped edge of the paper inside */
@@ -394,7 +394,7 @@ a.drawer:hover { transform: translateY(-2px); }
 @media (max-width: 900px) {
   .scene { height: auto; min-height: 0; object-fit: initial; }
   .sheet {
-    position: relative; right: auto; bottom: auto;
+    position: relative; left: auto; bottom: auto;
     width: min(520px, 100% - 32px);
     margin: -44px auto -40px;
   }
